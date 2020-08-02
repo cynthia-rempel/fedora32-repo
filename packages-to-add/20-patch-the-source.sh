@@ -76,6 +76,10 @@ sudo yum-builddep safelease-1.0.1-2.el8.src.rpm
 rpmbuild --rebuild safelease-1.0.1-2.el8.src.rpm 
 sudo dnf install ../RPMS/x86_64/safelease-*
   
+sudo yum-builddep v2v-conversion-host-1.16.0-1.el8.src.rpm 
+rpmbuild --rebuild v2v-conversion-host-1.16.0-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/v2v-conversion-host-*
+  
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
