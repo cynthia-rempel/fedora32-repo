@@ -6,6 +6,8 @@
 sudo yum-builddep ./*.rpm > log.txt 2>&1
 grep matching log.txt | sort | uniq | awk '{print $6}'
 
+# some packages require more file descriptors to be open 
+sudo sysctl -w fs.file-max=100000
 
 # ovirt-engine-nodejs-modules
 sudo yum-builddep ovirt-engine-nodejs-modules-2.0.30-1.el8.src.rpm
