@@ -60,7 +60,13 @@ sudo dnf install ../RPMS/noarch/engine-db-query-1.6.1-1.fc32.noarch.rpm
 sudo yum-builddep go-ovirt-engine-sdk4-4.4.1-1.el8.src.rpm 
 rpmbuild --rebuild go-ovirt-engine-sdk4-4.4.1-1.el8.src.rpm 
 sudo dnf install ../RPMS/x86_64/go-ovirt-engine-sdk4-devel-4.4.1-1.fc32.x86_64.rpm
-  
+
+sudo yum-builddep imgbased-1.2.10-0.1.el8.src.rpm 
+sudo dnf install python3-nose
+rpmbuild --rebuild imgbased-1.2.10-0.1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/imgbased-1.2.10-0.1.fc32.noarch.rpm 
+sudo dnf install ../RPMS/noarch/python3-imgbased-1.2.10-0.1.fc32.noarch.rpm
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
