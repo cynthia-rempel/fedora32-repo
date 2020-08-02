@@ -1,4 +1,6 @@
 # Placeholder to acknowledge the patching step
+# This is a first-pass to identify some things that need patching and order of a workingish install of rpms
+# TODO: re-run using mock
 
 # identify which packages need to be installed for a build to succeed
 sudo yum-builddep ./*.rpm > log.txt 2>&1
@@ -109,6 +111,10 @@ rpmbuild --rebuild ovirt-ansible-roles-1.2.3-1.el8.src.rpm
 rpmbuild --rebuild ovirt-ansible-shutdown-env-1.0.4-1.el8.src.rpm 
 rpmbuild --rebuild ovirt-ansible-vm-infra-1.2.3-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-ansible-*
+
+sudo yum-builddep ovirt-cockpit-sso-0.1.4-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-cockpit-sso-0.1.4-1.el8.src.rpm 
+sudo yum install ../RPMS/noarch/ovirt-cockpit-sso-0.1.4-1.fc32.noarch.rpm
   
 # 'vdsm-client
 # 'vdsm-jsonrpc
