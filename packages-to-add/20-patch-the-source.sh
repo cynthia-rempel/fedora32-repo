@@ -36,6 +36,12 @@ sudo yum-builddep python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm
 rpmbuild --rebuild python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm 
 sudo dnf install ../RPMS/x86_64/python*
 
+# python3-ioprocess
+sudo yum-builddep ioprocess-1.4.1-1.el8.src.rpm
+rpmbuild --rebuild ioprocess-1.4.1-1.el8.src.rpm 
+sudo dnf install ../RPMS/x86_64/ioprocess-*
+sudo dnf install ../RPMS/x86_64/python3-ioprocess-1.4.1-1.fc32.x86_64.rpm
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
