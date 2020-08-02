@@ -36,6 +36,10 @@ sudo yum-builddep python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm
 rpmbuild --rebuild python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm 
 sudo dnf install ../RPMS/x86_64/python*
 
+# ovirt-engine-extensions-api
+sudo yum-builddep ovirt-engine-extensions-api-1.0.1-1.el8.src.rpm
+sudo dnf install ../RPMS/noarch/ovirt-engine-extensions-api-*
+
 # python3-ioprocess
 sudo yum-builddep ioprocess-1.4.1-1.el8.src.rpm
 rpmbuild --rebuild ioprocess-1.4.1-1.el8.src.rpm 
@@ -54,4 +58,7 @@ sed 's/\#\ target\_py//' -i ../SPECS/vdsm.spec
 sed 's/\#\ RHEL\ 8//' -i ../SPECS/vdsm.spec
 sed 's/\#\ rhel//' -i ../SPECS/vdsm.spec
 
-
+sudo yum-builddep cockpit-ovirt-0.14.10-1.el8.src.rpm 
+sudo dnf install nodejs-packaging
+rpmbuild --rebuild cockpit-ovirt-0.14.10-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/cockpit-ovirt-dashboard-0.14.10-1.fc32.noarch.rpm
