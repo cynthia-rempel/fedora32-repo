@@ -23,7 +23,15 @@ rpmbuild --rebuild ovirt-engine-wildfly-19.1.0-2.el8.src.rpm
 sudo dnf install ../RPMS/x86_64/ovirt-engine-wildfly-19.1.0-2.fc32.x86_64.rpm
 
 # 'ovirt-engine-yarn'
+# there isn't a rpm in the 4.4 repo.  There's source though
+
 # 'ovirt-jboss-modules-maven-plugin
+sudo yum-builddep ovirt-jboss-modules-maven-plugin-2.0.2-0.1.el8.src.rpm 
+sudo dnf install maven-release-plugin
+rpmbuild --rebuild ovirt-jboss-modules-maven-plugin-2.0.2-0.1.el8.src.rpm
+sudo dnf install ../RPMS/noarch/ovirt-jboss-modules-maven-plugin-2.0.2-0.1.el8.noarch.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-jboss-modules-maven-plugin-javadoc-2.0.2-0.1.el8.noarch.rpm
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
