@@ -174,6 +174,9 @@ sudo yum-builddep ovirt-setup-lib-1.3.2-1.el8.src.rpm
 rpmbuild --rebuild ovirt-setup-lib-1.3.2-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
 
+sudo dnf install ../RPMS/x86_64/vdsm-network-4.40.22-1.fc32.x86_64.rpm 
+sudo dnf install ../RPMS/x86_64/vdsm-* ../RPMS/noarch/vdsm-* --skip-broken
+
 # sudo yum-builddep ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # rpmbuild --rebuild ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # sudo dnf install ../RPMS/noarch/ovirt-log-collector-4.4.3-1.fc32.noarch.rpm
