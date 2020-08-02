@@ -127,6 +127,10 @@ sudo dnf install ../RPMS/noarch/ovirt-engine-extension-aaa-ldap-*
 sudo yum-builddep ovirt-engine-extension-aaa-misc-1.1.0-1.el8.src.rpm
 rpmbuild --rebuild ovirt-engine-extension-aaa-misc-1.1.0-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-engine-extension-aaa-misc-1.1.0-1.fc32.noarch.rpm
+
+ sudo yum-builddep ovirt-engine-extension-logger-log4j-1.1.0-1.el8.src.rpm 
+ rpmbuild --rebuild ovirt-engine-extension-logger-log4j-1.1.0-1.el8.src.rpm 
+ sudo dnf install ../RPMS/noarch/ovirt-engine-extension-logger-log4j-1.1.0-1.fc32.noarch.rpm 
   
 # sudo yum-builddep ovirt-engine-api-explorer-0.0.6-1.el8.src.rpm
 # missing ovirt-engine-yarn
