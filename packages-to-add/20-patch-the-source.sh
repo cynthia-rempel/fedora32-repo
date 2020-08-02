@@ -161,8 +161,12 @@ sudo dnf install ../RPMS/noarch/ovirt-vmconsole-*
 sudo yum-builddep ovirt-scheduler-proxy-0.1.9-1.el8.src.rpm 
 rpmbuild --rebuild ovirt-scheduler-proxy-0.1.9-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-scheduler-proxy-0.1.9-1.fc32.noarch.rpm
-  
-  
+
+# cracklib
+sudo yum-builddep ovirt-setup-lib-1.3.2-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-setup-lib-1.3.2-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm ../RPMS/noarch/python2-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm  
+
 # python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
 # python2-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
 
