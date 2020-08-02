@@ -52,6 +52,11 @@ sudo dnf install ../RPMS/noarch/otopi-common-1.9.2-1.fc32.noarch.rpm
 sudo dnf install ../RPMS/noarch/python3-otopi-*
 sudo dnf install ../RPMS/noarch/otopi-*
 
+sudo yum-builddep engine-db-query-1.6.1-1.el8.src.rpm 
+sudo dnf install python3-flake8 python3-tools
+rpmbuild --rebuild engine-db-query-1.6.1-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/engine-db-query-1.6.1-1.fc32.noarch.rpm 
+  
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
