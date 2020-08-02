@@ -4,7 +4,7 @@
 sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-32-x86_64
 
 # install packages
-sudo dnf install httpd createrepo yum-utils
+sudo dnf install createrepo httpd rpm-build yum-utils
 
 # create the repo directory
 sudo mkdir -p /var/repo
