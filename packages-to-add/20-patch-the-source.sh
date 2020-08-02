@@ -144,7 +144,12 @@ sudo dnf install ../RPMS/x86_64/ovirt-imageio-*
 sudo yum-builddep ovirt-lldp-labeler-1.0.2-2.el8.src.rpm 
 rpmbuild --rebuild ovirt-lldp-labeler-1.0.2-2.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-lldp-labeler-1.0.2-2.fc32.noarch.rpm
-  
+
+# sudo yum-builddep ovirt-log-collector-4.4.3-1.el8.src.rpm 
+# rpmbuild --rebuild ovirt-log-collector-4.4.3-1.el8.src.rpm 
+# sudo dnf install ../RPMS/noarch/ovirt-log-collector-4.4.3-1.fc32.noarch.rpm
+# missing python3-ovirt-engine-lib
+
 # ovirt-host missing dependencies
 # rpmbuild --rebuild ovirt-engine-ui-extensions-1.2.2-1.el8.src.rpm 
 # sudo dnf install ../RPMS/noarch/ovirt-engine-ui-extensions-1.2.2-1.fc32.noarch.rpm
