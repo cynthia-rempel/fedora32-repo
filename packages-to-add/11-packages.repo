@@ -1,0 +1,4 @@
+name=Latest oVirt 4.4 Release
+baseurl=https://resources.ovirt.org/pub/ovirt-4.4/rpm/el8/SRPMS/
+enabled=0
+gpgcheck=0
