@@ -18,6 +18,10 @@ sudo dnf install ../RPMS/noarch/ovirt-engine-nodejs-modules-2.0.30-1.fc32.noarch
 # the sources that need to be installed before others can be built
 # 'mvn(org.ovirt.engine.api:ovirt-engine-extensions-api)'
 # 'ovirt-engine-wildfly'
+sudo yum-builddep ovirt-engine-wildfly-19.1.0-2.el8.src.rpm 
+rpmbuild --rebuild ovirt-engine-wildfly-19.1.0-2.el8.src.rpm
+sudo dnf install ../RPMS/x86_64/ovirt-engine-wildfly-19.1.0-2.fc32.x86_64.rpm
+
 # 'ovirt-engine-yarn'
 # 'ovirt-jboss-modules-maven-plugin
 # 'vdsm-client
