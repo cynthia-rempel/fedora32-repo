@@ -50,6 +50,7 @@ sudo yum-builddep otopi-1.9.2-1.el8.src.rpm
 rpmbuild --rebuild otopi-1.9.2-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/otopi-common-1.9.2-1.fc32.noarch.rpm 
 sudo dnf install ../RPMS/noarch/python3-otopi-*
+sudo dnf install ../RPMS/noarch/otopi-*
 
 # 'vdsm-client
 # 'vdsm-jsonrpc
