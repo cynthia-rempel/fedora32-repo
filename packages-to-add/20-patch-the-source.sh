@@ -115,7 +115,19 @@ sudo dnf install ../RPMS/noarch/ovirt-ansible-*
 sudo yum-builddep ovirt-cockpit-sso-0.1.4-1.el8.src.rpm 
 rpmbuild --rebuild ovirt-cockpit-sso-0.1.4-1.el8.src.rpm 
 sudo yum install ../RPMS/noarch/ovirt-cockpit-sso-0.1.4-1.fc32.noarch.rpm
-  
+
+# sudo yum-builddep ovirt-engine-api-explorer-0.0.6-1.el8.src.rpm
+# missing ovirt-engine-yarn
+
+# sudo yum-builddep ovirt-engine-dwh-4.4.1.2-1.el8.src.rpm
+# sudo dnf install dom4j
+# rpmbuild --rebuild ovirt-engine-dwh-4.4.1.2-1.el8.src.rpm 
+# sudo dnf install ../RPMS/noarch/ovirt-engine-dwh-*
+# missing ovirt-engine-setup-plugin-ovirt-engine-common 
+#         python3-ovirt-setup-lib 
+#         python2-ovirt-setup-lib
+
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
