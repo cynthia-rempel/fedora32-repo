@@ -12,3 +12,12 @@ sed 's/\%..yarn./yarn-1.22.0.js/' -i ../SPECS/ovirt-engine-nodejs-modules.spec
 rpmbuild -bb ../SPECS/ovirt-engine-nodejs-modules.spec
 # finally, test installing the patched RPM.
 sudo dnf install ../RPMS/noarch/ovirt-engine-nodejs-modules-2.0.30-1.fc32.noarch.rpm
+
+# the sources that need to be installed before others can be built
+# 'mvn(org.ovirt.engine.api:ovirt-engine-extensions-api)'
+# 'ovirt-engine-wildfly'
+# 'ovirt-engine-yarn'
+# 'ovirt-jboss-modules-maven-plugin
+# 'vdsm-client
+# 'vdsm-jsonrpc
+# 'vdsm-python
