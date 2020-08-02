@@ -136,6 +136,10 @@ sudo yum-builddep ovirt-engine-metrics-1.4.1.1-1.el8.src.rpm
 rpmbuild --rebuild ovirt-engine-metrics-1.4.1.1-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-engine-metrics-1.4.1.1-1.fc32.noarch.rpm
 
+# rpmbuild --rebuild ovirt-engine-ui-extensions-1.2.2-1.el8.src.rpm 
+# sudo dnf install ../RPMS/noarch/ovirt-engine-ui-extensions-1.2.2-1.fc32.noarch.rpm
+# missing ovirt-engine-webadmin-portal
+
 # sudo yum-builddep ovirt-engine-api-explorer-0.0.6-1.el8.src.rpm
 # missing ovirt-engine-yarn
 
