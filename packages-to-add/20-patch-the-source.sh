@@ -148,6 +148,11 @@ sudo dnf install ../RPMS/noarch/ovirt-lldp-labeler-1.0.2-2.fc32.noarch.rpm
 sudo yum-builddep ovirt-node-ng-4.4.0-1.el8.src.rpm
 rpmbuild --rebuild ovirt-node-ng-4.4.0-1.el8.src.rpm
 sudo dnf install ../RPMS/noarch/python3-ovirt-node-ng-nodectl-4.4.0-1.fc32.noarch.rpm ../RPMS/noarch/ovirt-node-ng-nodectl-4.4.0-1.fc32.noarch.rpm
+
+# scriplet failed?
+sudo yum-builddep ovirt-node-ng-image-update-4.4.1.4-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-node-ng-image-update-4.4.1.4-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-node-ng-image-update-4.4.1.4-1.el8.noarch.rpm
   
 # sudo yum-builddep ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # rpmbuild --rebuild ovirt-log-collector-4.4.3-1.el8.src.rpm 
