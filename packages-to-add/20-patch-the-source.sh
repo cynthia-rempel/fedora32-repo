@@ -136,6 +136,12 @@ sudo yum-builddep ovirt-engine-metrics-1.4.1.1-1.el8.src.rpm
 rpmbuild --rebuild ovirt-engine-metrics-1.4.1.1-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-engine-metrics-1.4.1.1-1.fc32.noarch.rpm
 
+
+sudo yum-builddep ovirt-imageio-2.0.9-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-imageio-2.0.9-1.el8.src.rpm 
+sudo dnf install ../RPMS/x86_64/ovirt-imageio-*
+
+# ovirt-host missing dependencies
 # rpmbuild --rebuild ovirt-engine-ui-extensions-1.2.2-1.el8.src.rpm 
 # sudo dnf install ../RPMS/noarch/ovirt-engine-ui-extensions-1.2.2-1.fc32.noarch.rpm
 # missing ovirt-engine-webadmin-portal
