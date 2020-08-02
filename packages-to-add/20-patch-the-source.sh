@@ -32,6 +32,10 @@ rpmbuild --rebuild ovirt-jboss-modules-maven-plugin-2.0.2-0.1.el8.src.rpm
 sudo dnf install ../RPMS/noarch/ovirt-jboss-modules-maven-plugin-2.0.2-0.1.el8.noarch.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-jboss-modules-maven-plugin-javadoc-2.0.2-0.1.el8.noarch.rpm
 
+sudo yum-builddep python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm 
+rpmbuild --rebuild python-ovirt-engine-sdk4-4.4.4-1.el8.src.rpm 
+sudo dnf install ../RPMS/x86_64/python*
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
