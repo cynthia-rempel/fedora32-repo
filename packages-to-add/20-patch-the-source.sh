@@ -67,6 +67,11 @@ rpmbuild --rebuild imgbased-1.2.10-0.1.el8.src.rpm
 sudo dnf install ../RPMS/noarch/imgbased-1.2.10-0.1.fc32.noarch.rpm 
 sudo dnf install ../RPMS/noarch/python3-imgbased-1.2.10-0.1.fc32.noarch.rpm
 
+
+sudo yum-builddep java-ovirt-engine-sdk4-4.4.3-1.el8.src.rpm 
+rpmbuild --rebuild java-ovirt-engine-sdk4-4.4.3-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/java-ovirt-engine-sdk4-4.4.3-1.fc32.noarch.rpm
+  
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
