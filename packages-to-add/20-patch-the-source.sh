@@ -79,6 +79,10 @@ sudo dnf install ../RPMS/x86_64/safelease-*
 sudo yum-builddep v2v-conversion-host-1.16.0-1.el8.src.rpm 
 rpmbuild --rebuild v2v-conversion-host-1.16.0-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/v2v-conversion-host-*
+
+sudo yum-builddep ovirt-ansible-cluster-upgrade-1.2.3-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-ansible-cluster-upgrade-1.2.3-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-ansible-cluster-upgrade-1.2.3-1.fc32.noarch.rpm
   
 # 'vdsm-client
 # 'vdsm-jsonrpc
