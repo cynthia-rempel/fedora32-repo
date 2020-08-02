@@ -169,6 +169,10 @@ sudo dnf install ../RPMS/noarch/python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm 
 
 # python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
 # python2-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
+# python2 requires cracklib
+sudo yum-builddep ovirt-setup-lib-1.3.2-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-setup-lib-1.3.2-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/python3-ovirt-setup-lib-1.3.2-1.fc32.noarch.rpm
 
 # sudo yum-builddep ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # rpmbuild --rebuild ovirt-log-collector-4.4.3-1.el8.src.rpm 
