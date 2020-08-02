@@ -154,6 +154,10 @@ sudo yum-builddep ovirt-node-ng-image-update-4.4.1.4-1.el8.src.rpm
 rpmbuild --rebuild ovirt-node-ng-image-update-4.4.1.4-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-node-ng-image-update-4.4.1.4-1.el8.noarch.rpm
   
+sudo yum-builddep ovirt-vmconsole-1.0.8-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-vmconsole-1.0.8-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-vmconsole-*
+  
 # sudo yum-builddep ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # rpmbuild --rebuild ovirt-log-collector-4.4.3-1.el8.src.rpm 
 # sudo dnf install ../RPMS/noarch/ovirt-log-collector-4.4.3-1.fc32.noarch.rpm
