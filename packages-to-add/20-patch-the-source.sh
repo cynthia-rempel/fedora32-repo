@@ -35,3 +35,13 @@ sudo dnf install ../RPMS/noarch/ovirt-jboss-modules-maven-plugin-javadoc-2.0.2-0
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
+sudo yum-builddep vdsm-4.40.22-1.el8.src.rpm 
+rpmbuild --rebuild vdsm-4.40.22-1.el8.src.rpm
+sed 's/\#rhel//g' -i ../SPECS/vdsm.spec
+sed 's/\#\ fedora//' -i ../SPECS/vdsm.spec
+sed 's/\#centos//' -i ../SPECS/vdsm.spec
+sed 's/\#\ target\_py//' -i ../SPECS/vdsm.spec
+sed 's/\#\ RHEL\ 8//' -i ../SPECS/vdsm.spec
+sed 's/\#\ rhel//' -i ../SPECS/vdsm.spec
+
+
