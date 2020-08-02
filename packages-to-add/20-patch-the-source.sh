@@ -99,6 +99,16 @@ sudo dnf install ../RPMS/noarch/ovirt-ansible-hosted-engine-setup-1.1.7-1.fc32.n
 sudo yum-builddep ovirt-ansible-infra-1.2.1-1.el8.src.rpm 
 rpmbuild --rebuild ovirt-ansible-infra-1.2.1-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-ansible-infra-1.2.1-1.fc32.noarch.rpm
+
+sudo yum-builddep ovirt-ansible-manageiq-1.2.1-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-ansible-manageiq-1.2.1-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-ansible-manageiq-1.2.1-1.fc32.noarch.rpm 
+rpmbuild --rebuild ovirt-ansible-repositories-1.2.4-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-ansible-repositories-1.2.4-1.fc32.noarch.rpm 
+rpmbuild --rebuild ovirt-ansible-roles-1.2.3-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-ansible-shutdown-env-1.0.4-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-ansible-vm-infra-1.2.3-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-ansible-*
   
 # 'vdsm-client
 # 'vdsm-jsonrpc
