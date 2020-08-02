@@ -92,6 +92,10 @@ sudo yum-builddep ovirt-ansible-engine-setup-1.2.4-1.el8.src.rpm
 rpmbuild --rebuild ovirt-ansible-engine-setup-1.2.4-1.el8.src.rpm 
 sudo dnf install ../RPMS/noarch/ovirt-ansible-engine-setup-1.2.4-1.fc32.noarch.rpm
 
+sudo yum-builddep ovirt-ansible-hosted-engine-setup-1.1.7-1.el8.src.rpm 
+rpmbuild --rebuild ovirt-ansible-hosted-engine-setup-1.1.7-1.el8.src.rpm 
+sudo dnf install ../RPMS/noarch/ovirt-ansible-hosted-engine-setup-1.1.7-1.fc32.noarch.rpm
+
 # 'vdsm-client
 # 'vdsm-jsonrpc
 # 'vdsm-python
