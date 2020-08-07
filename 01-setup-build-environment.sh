@@ -47,6 +47,9 @@ mock -r fedora-32-x86_64 --init
 # ls /home/cindy/rpmbuild/SRPMS/ | grep rpm$ | awk '{print "mock -r fedora-32-x86_64 rebuild /home/cindy/rpmbuild/SRPMS/"$1" --resultdir /var/lib/mock/"$1}' > find-build-errors.sh
 # bash -x find-build-errors.sh > find-build-errors.log 2>&1
 
+# create the repo directory
+sudo mkdir -p /var/repo/{noarch,x86_64}
+
 # Build cockpit-ovirt
 mock -r fedora-32-x86_64 --chain ovirt-engine-nodejs-modules-2.0.30-1.fc32.src.rpm cockpit-ovirt-0.14.10-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
@@ -56,8 +59,9 @@ mock -r fedora-32-x86_64 init
 
 mock -r fedora-32-x86_64 engine-db-query-1.6.1-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
 
-sudo mkdir -p /var/repo/{noarch,x86_64}
+
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
 # Reference:
