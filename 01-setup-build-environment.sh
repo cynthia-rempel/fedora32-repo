@@ -40,6 +40,8 @@ sed 's/BuildRequires.*automake/BuildRequires\:\ \ automake\nBuildRequires\:\ \ g
 
 sed 's/BuildRequires: systemd/BuildRequires: systemd\nBuildRequires: python3-six/' -i mom.spec
 
+sed 's/\%build/\%build\nsysctl -w fs.file-max=10241/' -i ovirt-engine.spec
+
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
 bash -x build-SRPMs.sh
