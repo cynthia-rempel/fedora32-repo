@@ -100,7 +100,49 @@ bash -x mv-noarch.sh
 mock -r fedora-32-x86_64 ovirt-ansible-cluster-upgrade-1.2.3-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh
-  
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+history
+mock -r fedora-32-x86_64 ovirt-ansible-disaster-recovery-1.3.0-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 ovirt-ansible-engine-setup-1.2.4-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-hosted-engine-setup-1.1.7-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-image-template-1.2.2-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-infra-1.2.1-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-manageiq-1.2.1-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-repositories-1.2.4-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 irt-ansible-roles-1.2.3-1.fc32.src.rpm
+mock -r fedora-32-x86_64 ovirt-ansible-roles-1.2.3-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-shutdown-env-1.0.4-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-ansible-vm-infra-1.2.3-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh
+
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
 # Reference:
