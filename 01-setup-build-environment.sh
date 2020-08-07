@@ -50,4 +50,7 @@ sudo mkdir -p /var/repo/{noarch,x86_64}
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
 # Reference:
+#   Setting up mock env
 #   https://blog.packagecloud.io/eng/2015/05/11/building-rpm-packages-with-mock/
+#   How to use mock --chain
+#   https://github.com/rpm-software-management/mock/issues/267
