@@ -40,9 +40,8 @@ sed 's/BuildRequires.*automake/BuildRequires\:\ \ automake\nBuildRequires\:\ \ g
 
 sed 's/BuildRequires: systemd/BuildRequires: systemd\nBuildRequires: python3-six/' -i mom.spec
 
-# locales requires more file descriptors so need sysctl
-sed 's/\%build/\%build\nsysctl -w fs.file-max=10241/' -i ovirt-engine.spec
-sed 's/BuildRequires.*python3-devel/BuildRequires\:\ \ python3-devel\nBuildRequires\:\ \ procps-ng/' -i ovirt-engine.spec
+# locales requires more file descriptors, sysctl results in read-only filesystem
+sed 's/ovirt_build_locales\ 1/ovirt_build_locales\ 0/' -i ovirt-engine.spec
 
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
