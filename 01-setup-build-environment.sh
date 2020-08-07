@@ -14,5 +14,12 @@ enabled=0
 gpgcheck=0
 END
 
+# at last, mirror the source RPMs
+reposync -n --source --repo ovirt-4.4-src  --newest-only
+
+# list the available environments: ls -alhrt /etc/mock/f*
+
+# initialize the mock sandbox
+mock -r fedora-32-x86_64 --init
 # Reference:
 #   https://blog.packagecloud.io/eng/2015/05/11/building-rpm-packages-with-mock/
