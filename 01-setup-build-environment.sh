@@ -30,10 +30,14 @@ bash -x get-sources.sh
  cd ovirt-4.4-spec/
  ls ../ovirt-4.4-src/ | awk '{print "rpm2cpio ../ovirt-4.4-src/"$1" | cpio -ivd"}' > get-specs.sh
  bash -x get-specs.sh
- sed 's/Source0.*/Source0\:\ yarn-offline-cache.tar/' -i ovirt-engine-nodejs-modules.spec
+ 
+# patch the .spec files
+sed 's/Source0.*/Source0\:\ yarn-offline-cache.tar/' -i ovirt-engine-nodejs-modules.spec
 sed 's/\%..yarn./yarn-1.22.0.js/' -i ovirt-engine-nodejs-modules.spec
 
 sed 's/BuildRequires.*automake/BuildRequires\:\ \ automake\nBuildRequires\:\ \ gcc/' -i ioprocess.spec
+
+sed 's/BuildRequires: systemd/BuildRequires: systemd\nBuildRequires: python3-six/' -i mom.spec
 
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
@@ -80,6 +84,8 @@ bash -x mv-x86_64.sh
 mock -r fedora-32-x86_64 java-ovirt-engine-sdk4-4.4.3-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh 
+
+
 
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
