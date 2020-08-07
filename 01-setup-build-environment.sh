@@ -43,6 +43,9 @@ sed 's/BuildRequires: systemd/BuildRequires: systemd\nBuildRequires: python3-six
 # locales requires more file descriptors, sysctl results in read-only filesystem
 sed 's/ovirt_build_locales\ 1/ovirt_build_locales\ 0/' -i ovirt-engine.spec
 
+# requires gwt 
+sed 's/ovirt_build_gwt 1/ovirt_build_gwt 0/' -i ovirt-engine.spec
+
 # grep -B1 java-11 ovirt-engine-dwh.spec 
 #        PY_VERSION=%{py_version} \\\
 #        JAVA_DIR=/usr/lib/jvm/java-11/ \\\
