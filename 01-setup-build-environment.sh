@@ -97,6 +97,10 @@ mock -r fedora-32-x86_64 otopi-1.9.2-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh
   
+mock -r fedora-32-x86_64 ovirt-ansible-cluster-upgrade-1.2.3-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh
+  
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
 # Reference:
