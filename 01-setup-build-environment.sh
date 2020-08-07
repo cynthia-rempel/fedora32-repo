@@ -74,6 +74,13 @@ mock -r fedora-32-x86_64 ioprocess-1.4.1-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep x86_64'\.'rpm$ | awk '{print "mv "$1" /var/repo/x86_64"}' > mv-x86_64.sh
 bash -x mv-x86_64.sh
 
+# mock -r fedora-32-x86_64 java-client-kubevirt-0.5.0-1.fc32.src.rpm
+# has java build issues skip it to see if it's really needed
+
+mock -r fedora-32-x86_64 java-ovirt-engine-sdk4-4.4.3-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+bash -x mv-noarch.sh 
+
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
 # Reference:
