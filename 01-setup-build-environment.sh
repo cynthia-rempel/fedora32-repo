@@ -44,6 +44,8 @@ bash -x build-SRPMs.sh
 mock -r fedora-32-x86_64 --init
 ls /home/cindy/rpmbuild/SRPMS/ | grep rpm$ | awk '{print "mock -r fedora-32-x86_64 rebuild /home/cindy/rpmbuild/SRPMS/"$1" --resultdir /var/lib/mock/"$1}' > find-build-errors.sh
 
+bash -x find-build-errors.sh > find-build-errors.log 2>&1
+
 sudo mkdir -p /var/repo/{noarch,x86_64}
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
