@@ -33,7 +33,7 @@ bash -x get-sources.sh
  sed 's/Source0.*/Source0\:\ yarn-offline-cache.tar/' -i ovirt-engine-nodejs-modules.spec
 sed 's/\%..yarn./yarn-1.22.0.js/' -i ovirt-engine-nodejs-modules.spec
 
-sed 's/BuildRequires.*automake/BuildRequires\:\ \ automake\nBuildRequires\:\ \ cc/' -i ioprocess.spec
+sed 's/BuildRequires.*automake/BuildRequires\:\ \ automake\nBuildRequires\:\ \ gcc/' -i ioprocess.spec
 
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
