@@ -29,6 +29,9 @@ bash -x get-sources.sh
  mkdir ovirt-4.4-spec
  cd ovirt-4.4-spec/
  ls ../ovirt-4.4-src/ | awk '{print "rpm2cpio ../ovirt-4.4-src/"$1" | cpio -ivd"}' > get-specs.sh
+ bash -x get-specs.sh
+ sed 's/Source0.*/Source0\:\ yarn-offline-cache.tar/' -i ovirt-engine-nodejs-modules.spec
+sed 's/\%..yarn./yarn-1.22.0.js/' -i ovirt-engine-nodejs-modules.spec
  
 # list the available environments: ls -alhrt /etc/mock/f*
 
