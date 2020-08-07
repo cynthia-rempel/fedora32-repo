@@ -43,6 +43,13 @@ sed 's/BuildRequires: systemd/BuildRequires: systemd\nBuildRequires: python3-six
 # locales requires more file descriptors, sysctl results in read-only filesystem
 sed 's/ovirt_build_locales\ 1/ovirt_build_locales\ 0/' -i ovirt-engine.spec
 
+# grep -B1 java-11 ovirt-engine-dwh.spec 
+#        PY_VERSION=%{py_version} \\\
+#        JAVA_DIR=/usr/lib/jvm/java-11/ \\\
+# --
+# %build
+# export JAVA_HOME=/usr/lib/jvm/java-11/
+
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
 bash -x build-SRPMs.sh
