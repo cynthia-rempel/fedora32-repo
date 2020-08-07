@@ -60,7 +60,9 @@ mock -r fedora-32-x86_64 init
 mock -r fedora-32-x86_64 engine-db-query-1.6.1-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
-
+mock -r fedora-32-x86_64 go-ovirt-engine-sdk4-4.4.1-1.fc32.src.rpm
+find /var/lib/mock/fedora-32-x86_64/root/ | grep x86_64'\.'rpm$ | awk '{print "mv "$1" /var/repo/x86_64"}' > mv-x86_64.sh
+bash -x mv-x86_64.sh
 
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
