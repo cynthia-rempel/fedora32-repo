@@ -85,6 +85,8 @@ mock -r fedora-32-x86_64 java-ovirt-engine-sdk4-4.4.3-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh 
 
+# mock -r fedora-32-x86_64 mingw-spice-vdagent-0.9.0-2.fc32.src.rpm
+# took a really long time skip it to see if it's really needed
 
 
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
