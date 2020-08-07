@@ -37,10 +37,13 @@ sed 's/\%..yarn./yarn-1.22.0.js/' -i ovirt-engine-nodejs-modules.spec
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
 bash -x build-SRPMs.sh
 
- 
+
 # list the available environments: ls -alhrt /etc/mock/f*
 
 # initialize the mock sandbox
 mock -r fedora-32-x86_64 --init
+sudo mkdir -p /var/repo/{noarch,x86_64}
+sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
+
 # Reference:
 #   https://blog.packagecloud.io/eng/2015/05/11/building-rpm-packages-with-mock/
