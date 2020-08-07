@@ -42,9 +42,13 @@ bash -x build-SRPMs.sh
 
 # initialize the mock sandbox
 mock -r fedora-32-x86_64 --init
-ls /home/cindy/rpmbuild/SRPMS/ | grep rpm$ | awk '{print "mock -r fedora-32-x86_64 rebuild /home/cindy/rpmbuild/SRPMS/"$1" --resultdir /var/lib/mock/"$1}' > find-build-errors.sh
 
-bash -x find-build-errors.sh > find-build-errors.log 2>&1
+# finding problem packages
+# ls /home/cindy/rpmbuild/SRPMS/ | grep rpm$ | awk '{print "mock -r fedora-32-x86_64 rebuild /home/cindy/rpmbuild/SRPMS/"$1" --resultdir /var/lib/mock/"$1}' > find-build-errors.sh
+# bash -x find-build-errors.sh > find-build-errors.log 2>&1
+
+# Build cockpit-ovirt
+mock -r fedora-32-x86_64 --chain ovirt-engine-nodejs-modules-2.0.30-1.fc32.src.rpm cockpit-ovirt-0.14.10-1.fc32.src.rpm
 
 sudo mkdir -p /var/repo/{noarch,x86_64}
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
