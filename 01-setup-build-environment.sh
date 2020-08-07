@@ -42,6 +42,9 @@ bash -x build-SRPMs.sh
 
 # initialize the mock sandbox
 mock -r fedora-32-x86_64 --init
+
+ls /home/cindy/ovirt-4.4-src/ | grep rpm$ | awk '{print "mock -r fedora-32-x86_64 rebuild /home/cindy/rpmbuild/SRPMS/"$1" --resultdir /var/lib/mock/"$1}' > find-build-errors.sh
+
 sudo mkdir -p /var/repo/{noarch,x86_64}
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
