@@ -17,6 +17,11 @@ END
 # at last, mirror the source RPMs
 reposync -n --source --repo ovirt-4.4-src  --newest-only
 
+# get the SOURCES files
+cd /home/cindy/rpmbuild/SOURCES/
+ls ../../ovirt-4.4-src/ | awk '{print "rpm2cpio ../../ovirt-4.4-src/"$1" | cpio -ivd"}' > get-sources.sh
+bash -x get-sources.sh
+
 # get the .spec files
  mkdir ovirt-4.4-spec
  cd ovirt-4.4-spec/
