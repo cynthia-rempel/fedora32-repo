@@ -2,6 +2,7 @@
 # for some reason, the root partition does use the whole disk by default
 # sudo lvextend -l 100%FREE /dev/mapper/fedora-root00
 # sudo xfs_growfs /dev/mapper/fedora-root00
+# sudo sysctl -w fs.file-max=100000
 
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-32-x86_64
 # Add and configure a 'clean-room' to create the packages in
