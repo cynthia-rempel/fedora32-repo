@@ -52,7 +52,7 @@ sed 's/ovirt_build_gwt 1/ovirt_build_gwt 0/' -i ovirt-engine.spec
 # --
 # %build
 # export JAVA_HOME=/usr/lib/jvm/java-11/
-
+sed 's/ovirt_build_all_user_agents 1/ovirt_build_all_user_agents 0/' -i ovirt-engine.spec
 # build the patched SRPMs
 ls | grep \.spec$ | awk '{print "rpmbuild -bs "$1}' > build-SRPMs.sh
 bash -x build-SRPMs.sh
