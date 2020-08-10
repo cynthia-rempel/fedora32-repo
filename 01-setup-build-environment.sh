@@ -163,6 +163,10 @@ bash -x mv-noarch.sh
 # ovirt-engine-4.4.1.10-1.fc32
 
 mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
+mock -r fedora-32-x86_64 ovirt-engine-dwh-4.4.1.2-1.fc32.src.rpm
+  581  sudo find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+  582  sudo bash -x mv-noarch.sh
+mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
 mock -r fedora-32-x86_64 ovirt-engine-yarn-1.7.0-1.fc32.src.rpm 
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh
