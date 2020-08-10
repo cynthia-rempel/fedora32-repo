@@ -21,6 +21,10 @@ END
 # at last, mirror the source RPMs
 reposync -n --source --repo ovirt-4.4-src  --newest-only
 
+# get some dependencies
+cd ovirt-4.4-src
+curl -olk https://resources.ovirt.org/pub/ovirt-4.3/rpm/el7Workstation/SRPMS/ovirt-engine-yarn-1.7.0-1.el7.src.rpm
+
 # get the SOURCES files
 cd /home/cindy/rpmbuild/SOURCES/
 ls ../../ovirt-4.4-src/ | awk '{print "rpm2cpio ../../ovirt-4.4-src/"$1" | cpio -ivd"}' > get-sources.sh
