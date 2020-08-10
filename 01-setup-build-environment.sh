@@ -214,6 +214,9 @@ mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
  mock -r fedora-32-x86_64 ovirt-log-collector-4.4.3-1.fc32.src.rpm
   652  sudo find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
   653  sudo bash -x mv-noarch.sh
+mock -r fedora-32-x86_64 ovirt-node-ng-4.4.0-1.fc32.src.rpm
+  661  sudo find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
+  662  sudo bash -x mv-noarch.sh
 # ovirt depends on ovirt-engine-yarn
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
