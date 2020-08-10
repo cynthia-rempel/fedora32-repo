@@ -204,6 +204,9 @@ mock -r fedora-32-x86_64 --chain ioprocess-1.4.1-1.fc32.src.rpm vdsm-4.40.22-1.f
 mock -r fedora-32-x86_64 ovirt-hosted-engine-setup-2.4.5-1.fc32.src.rpm
   631  sudo find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
   632  sudo bash -x mv-noarch.sh
+mock -r fedora-32-x86_64 ovirt-imageio-2.0.9-1.fc32.src.rpm
+  639  sudo find /var/lib/mock/fedora-32-x86_64/root/ | grep x86_64'\.'rpm$ | awk '{print "mv "$1" /var/repo/x86_64"}' > mv-x86_64.sh
+  640  sudo bash -x mv-x86_64.sh
 # ovirt depends on ovirt-engine-yarn
 sudo mv /var/lib/mock/fedora-32-x86_64/result/*.noarch.rpm /var/repo/noarch/
 
