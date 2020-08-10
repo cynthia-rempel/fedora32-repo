@@ -159,6 +159,9 @@ mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
 mock -r fedora-32-x86_64 ovirt-ansible-vm-infra-1.2.3-1.fc32.src.rpm
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
 bash -x mv-noarch.sh
+# missing pom https://repo1.maven.org/maven2/com/google/gwt/gwt/2.8.0/gwt-2.8.0.pom
+# ovirt-engine-4.4.1.10-1.fc32
+
 mock -r fedora-32-x86_64 --clean && mock -r fedora-32-x86_64 --init
 mock -r fedora-32-x86_64 ovirt-engine-yarn-1.7.0-1.fc32.src.rpm 
 find /var/lib/mock/fedora-32-x86_64/root/ | grep noarch'\.'rpm$ | awk '{print "mv "$1" /var/repo/noarch"}' > mv-noarch.sh
